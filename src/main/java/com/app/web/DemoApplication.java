@@ -19,11 +19,12 @@ public class DemoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Estudiante estudiante1 = new Estudiante("Pedro", "Donoso", "pedro.eduardo.donoso@gmail.com");
-		repositorio.save(estudiante1);
 
-		Estudiante estudiante2 = new Estudiante("Eduardo", "Ramírez", "eduardo2025@hotmail.com");
-		repositorio.save(estudiante2);
+//		Estudiante estudiante1 = new Estudiante("Pedro", "Donoso", "pedro.eduardo.donoso@gmail.com");
+//		repositorio.save(estudiante1);
+//
+//		Estudiante estudiante2 = new Estudiante("Eduardo", "Ramírez", "eduardo2025@hotmail.com");
+//		repositorio.save(estudiante2);
 	}
 
 }
