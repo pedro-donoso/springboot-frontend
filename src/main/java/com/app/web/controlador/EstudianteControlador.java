@@ -1,5 +1,6 @@
 package com.app.web.controlador;
 
+import com.app.web.entidad.Estudiante;
 import com.app.web.servicio.EstudianteServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,5 +17,12 @@ public class EstudianteControlador {
     public String listarEstudiantes(Model modelo) {
         modelo.addAttribute("estudiantes", servicio.listarTodosLosEstudiantes());
         return "estudiantes";
+    }
+
+    @GetMapping("/estudiantes/nuevo")
+    public String crearEstudianteFormulario(Model modelo) {
+        Estudiante estudiante = new Estudiante();
+        modelo.addAttribute("estudiante", estudiante);
+        return "crear_estudiante";
     }
 }
