@@ -21,4 +21,19 @@ public class EstudianteServicioImpl implements EstudianteServicio {
     public Estudiante guardarEstudiante(Estudiante estudiante) {
         return repositorio.save(estudiante);
     }
+
+    @Override
+    public Estudiante obtenerEstudiantePorId(Long id) {
+        return null;
+    }
+
+    @Override
+    public Estudiante actualizarEstudiante(Estudiante estudiante) {
+        return null;
+    }
+
+    @Override
+    public void eliminarEstudiante(Long id) {
+
+    }
 }
