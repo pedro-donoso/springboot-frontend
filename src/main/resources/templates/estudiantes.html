@@ -9,48 +9,47 @@
 <body>
 
 <div class="container">
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark px-5">
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark px-5 d-flex justify-content-between">
         <a class="navbar-brand" href="">Control de estudiantes</a>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <a th:href="@{/estudiantes/nuevo}" class="btn btn-primary btn-sm mb3">Agregar estudiante</a>
-        </div>
+        <a th:href="@{/estudiantes/nuevo}" class="btn btn-primary btn-sm">Agregar estudiante</a>
     </nav>
 </div>
 
-
-
 <div class="container mt-5">
-
-
-
     <div class="row">
-        <h2>Lista de Estudiantes</h2>
+        <h3>Lista de Estudiantes</h3>
     </div>
-
 
     <br>
 
-    <table class="table table-info table-striped">
-        <thead>
-        <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col">Apellido</th>
-            <th scope="col">Email</th>
-            <th scope="col">Acciones</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="estudiante : ${estudiantes}">
-            <td th:text="${estudiante.nombre}">Nombre</td>
-            <td th:text="${estudiante.apellido}">Apellido</td>
-            <td th:text="${estudiante.email}">Email</td>
-            <td>
-                <a th:href="@{/estudiantes/editar/{id}(id=${estudiante.id})}" class="btn btn-info">Editar</a>
-                <a th:href="@{/estudiantes/{id}(id=${estudiante.id})}" class="btn btn-danger">Eliminar</a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="table table-info table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Email</th>
+                <th scope="col">Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="estudiante : ${estudiantes}">
+                <td th:text="${estudiante.nombre}">Nombre</td>
+                <td th:text="${estudiante.apellido}">Apellido</td>
+                <td th:text="${estudiante.email}">Email</td>
+                <td>
+                    <a th:href="@{/estudiantes/editar/{id}(id=${estudiante.id})}" class="btn btn-info btn-sm">Editar</a>
+                    <a th:href="@{/estudiantes/{id}(id=${estudiante.id})}" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
+
+<!-- Optional JavaScript; choose one of the two! -->
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+
 </body>
 </html>

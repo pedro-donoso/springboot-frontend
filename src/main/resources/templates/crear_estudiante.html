@@ -10,11 +10,9 @@
 <body>
 
 <div class="container">
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark px-5">
-        <a class="navbar-brand" href="">Control de estudiantes</a>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <a th:href="@{/estudiantes/nuevo}" class="btn btn-primary btn-sm mb3">Agregar estudiante</a>
-        </div>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark px-5 d-flex justify-content-between">
+        <a class="navbar-brand" th:href="@{/}">Control de estudiantes</a>
+        <a th:href="@{/estudiantes/nuevo}" class="btn btn-primary btn-sm">Agregar estudiante</a>
     </nav>
 </div>
 
@@ -22,7 +20,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 mx-auto card">
-            <h1 class="text-center">Registro de estudiante</h1>
+            <h3 class="text-center mt-4">Registro de estudiante</h3>
             <div class="card-body">
                 <form th:action="@{/estudiantes}" th:object="${estudiante}" method="POST">
                     <div class="form-group">
