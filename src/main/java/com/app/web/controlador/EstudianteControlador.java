@@ -16,7 +16,7 @@ public class EstudianteControlador {
     @Autowired
     private EstudianteServicio servicio;
 
-    @GetMapping({"/estudiantes","/"})
+    @GetMapping({"/estudiantes", "/"})
     public String listarEstudiantes(Model modelo) {
         modelo.addAttribute("estudiantes", servicio.listarTodosLosEstudiantes());
         return "estudiantes";
@@ -50,6 +50,12 @@ public class EstudianteControlador {
         estudianteExistente.setEmail(estudiante.getEmail());
 
         servicio.actualizarEstudiante(estudianteExistente);
+        return "redirect:/estudiantes";
+    }
+
+    @GetMapping("/estudiantes/{id}")
+    public String eliminarEstudiante(@PathVariable Long id) {
+        servicio.eliminarEstudiante(id);
         return "redirect:/estudiantes";
     }
 }
