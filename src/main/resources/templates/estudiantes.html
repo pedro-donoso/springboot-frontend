@@ -31,13 +31,18 @@
             <th scope="col">Nombre</th>
             <th scope="col">Apellido</th>
             <th scope="col">Email</th>
+            <th scope="col">Acciones</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="estudiante : ${estudiantes}">
-            <td th:text="${estudiante.nombre}"></td>
-            <td th:text="${estudiante.apellido}"></td>
-            <td th:text="${estudiante.email}"></td>
+            <td th:text="${estudiante.nombre}">Nombre</td>
+            <td th:text="${estudiante.apellido}">Apellido</td>
+            <td th:text="${estudiante.email}">Email</td>
+            <td>
+                <a th:href="@{/estudiantes/editar/{id}(id=${estudiante.id})}" class="btn btn-info">Editar</a>
+                <a th:href="@{/estudiantes/{id}(id=${estudiante.id})}" class="btn btn-danger">Eliminar</a>
+            </td>
         </tr>
         </tbody>
     </table>
